@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Slide from './Slide'
 
-type SlideShowProps = { title: string, contents: string[] }
+export type SlideShowProps = { title: string, contents: string[] }
 const Slideshow = (props: SlideShowProps) => {
     return (
         <div>
