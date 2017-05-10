@@ -1,18 +1,17 @@
 import * as React from 'react';
-import './App.css';
-
-const logo = require('./logo.jpg');
+import { Router, Route, } from 'react-router' 
+import { createBrowserHistory } from 'history' 
+import Header from './Header';
+import Slideshow from './Slideshow'
 
 class App extends React.Component<{}, null> {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <Header />
+        <Router history={createBrowserHistory()}>
+          <Route path="/slideshows/:id" component={Slideshow} />
+        </Router>
       </div>
     );
   }
