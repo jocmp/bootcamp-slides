@@ -4,5 +4,10 @@ exports[`Slideshow renders 1`] = `
     Exciting slideshow
   </h3>
   <ul />
+  <button
+    className="next-button"
+    onClick={[Function]}>
+    Next
+  </button>
 </div>
 `;

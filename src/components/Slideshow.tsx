@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Slide from './Slide'
 
-export type SlideShowProps = { title: string, contents: string[] }
+export type SlideShowProps = { title: string, contents: string[], handleNextClick: () => void }
 const Slideshow = (props: SlideShowProps) => {
     return (
         <div>
@@ -11,8 +11,9 @@ const Slideshow = (props: SlideShowProps) => {
                 <Slide content={content}/>
             )}
             </ul>
+            <button className="next-button" onClick={props.handleNextClick}>Next</button>
         </div>
     );
-}
+} 
 
 export default Slideshow;
