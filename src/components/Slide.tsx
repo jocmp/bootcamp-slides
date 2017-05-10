@@ -1,11 +1,9 @@
 import * as React from 'react'
 
 
-type slideProps = { slideIndex: number }
+type slideProps = { content: string }
 const Slide = (props: slideProps) => {
-    return (
-        <p>{props.slideIndex}</p>
-    );
+    return <p>{props.content}</p>;
 }
 
 export default Slide;

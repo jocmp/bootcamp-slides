@@ -1,0 +1,8 @@
+exports[`Slideshow renders 1`] = `
+<div>
+  <h3>
+    Exciting slideshow
+  </h3>
+  <ul />
+</div>
+`;
