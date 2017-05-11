@@ -1,6 +1,6 @@
 import * as React from 'react'
-import TitleSlide from '../src/components/TitleSlide'
-import { SlideModel } from '../src/Models'
+import TitleSlide from '../../src/components/TitleSlide'
+import { SlideModel } from '../../src/Models'
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
 

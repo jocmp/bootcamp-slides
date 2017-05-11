@@ -1,6 +1,6 @@
 import * as React from 'react'
-import Slideshow from '../src/components/Slideshow'
-import { SlideshowModel, SlideModel } from '../src/Models'
+import Slideshow from '../../src/components/Slideshow'
+import { SlideshowModel, SlideModel } from '../../src/Models'
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
 
