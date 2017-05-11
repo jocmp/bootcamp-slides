@@ -1,40 +1,31 @@
 import * as Actions from '../../src/actions'
-import { SlideshowProps } from '../../src/Props'
-import { SlideshowModel, SlideModel } from '../../src/Models'
 
 describe('actions', () => {
 
-    const slide: SlideModel = {
-        title: "Exciting Slide",
-        slide_type: "title",
-    }; 
-    
-    const show: SlideshowModel = {
-        id: 1,
-        title: "Exciting Presentation",
-        slides: [ slide, slide, slide ]
-    };
-
-    const props: SlideshowProps = {
-        currentIndex: 0,
-        slideshow: show, 
-        handleNextClick: jest.fn()
-    }
-
     it('increments value of next slide', () => {
-        const nextProps = Actions.nextSlide(props);
-        expect(nextProps.currentIndex).toEqual(1);
+        const currentIndex: number = 0;
+        const totalLength: number = 4;
+
+        const action = Actions.nextSlide(currentIndex, totalLength);
+        
+        expect(action.currentIndex).toEqual(1);
     });
 
+    it('increments value of next slide', () => {
+        const currentIndex: number = 2;
+        const totalLength: number = 4;
+
+        const action = Actions.nextSlide(currentIndex, totalLength);
+        
+        expect(action.currentIndex).toEqual(3);
+    });
+    
     it('does not increment if at last index', () => {
-        const lastIndex = props.slideshow.slides.length - 1;
+        const currentIndex: number = 3;
+        const totalLength: number = 4;
 
-        const lastIndexProps: SlideshowProps = {
-            ...props,
-            currentIndex: lastIndex,
-        }
-        const nextProps = Actions.nextSlide(lastIndexProps);
+        const action = Actions.nextSlide(currentIndex, totalLength);
 
-        expect(nextProps.currentIndex).toEqual(lastIndex)
+        expect(action.currentIndex).toEqual(currentIndex)
     });
 });
