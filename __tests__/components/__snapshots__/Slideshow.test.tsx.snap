@@ -1,12 +1,8 @@
 exports[`Slideshow renders 1`] = `
 <div>
-  <TitleSlide
-    slide={
-      Object {
-        "slide_type": "title",
-        "title": "Exciting Slide",
-      }
-    } />
+  <h3>
+     at 
+  </h3>
   <button
     className="next-button"
     onClick={[Function]}>

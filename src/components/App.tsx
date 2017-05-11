@@ -1,17 +1,20 @@
 import * as React from 'react';
 import { Router, Route, } from 'react-router' 
-import { createBrowserHistory } from 'history' 
+import createBrowserHistory from 'history/createBrowserHistory' 
 import Header from './Header';
-import Slideshow from './Slideshow'
+import SlideshowContainer from '../containers/SlideshowContainer'
+import { Provider } from 'react-redux'
 
-class App extends React.Component<{}, null> {
+class App extends React.Component<any, null> {
   render() {
     return (
       <div className="App">
         <Header />
-        <Router history={createBrowserHistory()}>
-          <Route path="/slideshows/:id" component={Slideshow} />
-        </Router>
+        <Provider store={this.props.store}>
+          <Router history={createBrowserHistory()}>
+            <Route path="/slideshows/:id/slides/:index" component={SlideshowContainer} />
+          </Router>
+        </Provider>  
       </div>
     );
   }

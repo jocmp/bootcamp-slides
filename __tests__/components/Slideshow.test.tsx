@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Slideshow from '../../src/components/Slideshow'
+import { SlideshowProps } from '../../src/Props' 
 import { SlideshowModel, SlideModel } from '../../src/Models'
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
@@ -16,13 +17,15 @@ describe('Slideshow', () => {
     };
     
     it('renders', () => {
-        const wrapper = shallow(<Slideshow slideshow={show} currentIndex={0} handleNextClick={jest.fn()} />)
+        const wrapper = shallow(
+            <Slideshow slideshow={show} match={ { params: {}} } handleNextClick={jest.fn()} fetchSlideshow={(id: number) => show} />)
         expect(toJson(wrapper)).toMatchSnapshot()
     });
 
     it('responds to next click', () => {
         const nextListener = jest.fn();
-        const wrapper = shallow(<Slideshow slideshow={show} currentIndex={0} handleNextClick={nextListener} />)
+        const wrapper = shallow(
+            <Slideshow slideshow={show} match={ { params: {}} } handleNextClick={nextListener} fetchSlideshow={(id: number) => show} />)
         wrapper.find('.next-button').simulate('click') // optionally: stubbed out text edit event
         expect(nextListener).toHaveBeenCalled()
     });
