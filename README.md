@@ -7,7 +7,7 @@ Accelerator Bootcamp
 	"title": "title here",
 	"slides": [
 			{ 
-				"title": "title here"
+				"title": "title here",
 				"slide_type": "two-column",
 				"content": ["content 1", "content 2"]
 			}
