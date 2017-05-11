@@ -6,10 +6,10 @@ Accelerator Bootcamp
 { 
 	"title": "title here",
 	"slides": [
-			{ // slide object
+			{ 
 				"title": "title here"
-				"slide_type": "title|simple|two-column",
-				"content": ["content 1", "content 2", "..."]
+				"slide_type": "two-column",
+				"content": ["content 1", "content 2"]
 			}
 	]
 }
