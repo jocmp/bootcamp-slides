@@ -1,0 +1,12 @@
+exports[`Slideshow renders 1`] = `
+<div>
+  <h3>
+     at 
+  </h3>
+  <button
+    className="next-button"
+    onClick={[Function]}>
+    Next
+  </button>
+</div>
+`;
