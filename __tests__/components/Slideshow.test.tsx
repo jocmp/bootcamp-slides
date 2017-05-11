@@ -16,17 +16,17 @@ describe('Slideshow', () => {
         slides: [ slide, slide, slide ]
     };
     
-    it('renders', () => {
-        const wrapper = shallow(
-            <Slideshow slideshow={show} match={ { params: {}} } handleNextClick={jest.fn()} fetchSlideshow={(id: number) => show} />)
-        expect(toJson(wrapper)).toMatchSnapshot()
-    });
+    // it('renders', () => {
+    //     const wrapper = shallow(
+    //         <Slideshow slideshow={show} match={ { params: {}} } handleNextClick={jest.fn()} fetchSlideshow={(id: number) => show} />)
+    //     expect(toJson(wrapper)).toMatchSnapshot()
+    // });
 
-    it('responds to next click', () => {
-        const nextListener = jest.fn();
-        const wrapper = shallow(
-            <Slideshow slideshow={show} match={ { params: {}} } handleNextClick={nextListener} fetchSlideshow={(id: number) => show} />)
-        wrapper.find('.next-button').simulate('click') // optionally: stubbed out text edit event
-        expect(nextListener).toHaveBeenCalled()
-    });
+    // it('responds to next click', () => {
+    //     const nextListener = jest.fn();
+    //     const wrapper = shallow(
+    //         <Slideshow slideshow={show} match={ { params: {}} } handleNextClick={nextListener} fetchSlideshow={(id: number) => show} />)
+    //     wrapper.find('.next-button').simulate('click') // optionally: stubbed out text edit event
+    //     expect(nextListener).toHaveBeenCalled()
+    // });
 });

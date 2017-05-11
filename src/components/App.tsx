@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Router, Route, } from 'react-router' 
+import { Router, Route } from 'react-router' 
 import createBrowserHistory from 'history/createBrowserHistory' 
 import Header from './Header';
 import SlideshowContainer from '../containers/SlideshowContainer'

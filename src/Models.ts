@@ -9,3 +9,7 @@ export interface SlideModel {
     slide_type: string;
     content?: string[];
 }
+
+export interface AppState {
+    slideshow: SlideshowModel;
+}

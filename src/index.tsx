@@ -1,22 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './components/App';
-import './index.css';
+import './stylesheets/index.css';
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+import rootReducer from './reducers/reducers'
 
-export const slideshow = (state: any, action: any) => {
-  switch(action.type) {
-    case 'LOAD_SLIDESHOW':
-      return {
-        slideshow: action.slideshow
-      }
-    default:
-      return {};
-  }
-}
-
-export const store = createStore(slideshow, applyMiddleware(thunk));
+export const store = createStore(rootReducer, applyMiddleware(thunk));
 store.subscribe(() => console.log(store.getState()))
 
 ReactDOM.render(
