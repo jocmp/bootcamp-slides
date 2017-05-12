@@ -3,5 +3,24 @@
         font-size: 40pt;
         height: 100%;
         margin-top: 30%;
+        background: lime;
+    }
+}
+
+.simple-slide {
+    .row {
+        width: 100%;
+        display: inline-block;
+        padding-left: 32px;
+    }
+    h3 {
+        font-size: 20pt;
+        float: left;
+        padding-top: 16px;
+        background: lime;
+    }
+    p {
+        float: left;
+        background: salmon;
     }
 }

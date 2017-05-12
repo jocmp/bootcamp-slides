@@ -1,12 +1,18 @@
 import * as React from 'react';
-import '../stylesheets/App.css'
+import '../../public/stylesheets/App.css'
 
-const logo = require('../assets/logo.jpg')
+const logo = require('../assets/logo.svg')
 
 const Header = () => {
     return (
-        <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
+        <div className="app-header">
+            <div>
+                <img src={logo} className="app-logo" alt="logo" />
+            </div>
+            <div className="app-title">
+                <h2>Bootcamp Slides</h2>
+                <span>Information for the Information Age.</span>
+            </div>
         </div>
     );
 }

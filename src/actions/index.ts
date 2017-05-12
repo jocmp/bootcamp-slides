@@ -27,12 +27,9 @@ const apiData: SlideshowModel = {
             slide_type: "title"
         },
         {
-            title: "Title there",
-            slide_type: "title"
-        },
-        {
-            title: "Title everywhere",
-            slide_type: "title"
+            title: "Sensational Informational",
+            slide_type: "simple",
+            content: ["Inspirational insatiable"]
         }
     ]
 };

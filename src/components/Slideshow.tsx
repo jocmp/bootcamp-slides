@@ -1,16 +1,18 @@
 import * as React from 'react'
 import TitleSlide from './TitleSlide'
+import SimpleSlide from './SimpleSlide'
 import { SlideshowProps } from '../Props'
 import { SlideModel } from '../Models'
-import '../stylesheets/Slideshow.css'
+import '../../public/stylesheets/Slideshow.css'
 
 const getSlideFromType = (slide: SlideModel) => {
     switch(slide.slide_type) {
         case "simple":
+            return <SimpleSlide slide={ slide } />
         case "two-column":
         case "title":
         default: 
-            return <TitleSlide slide={slide} />
+            return <TitleSlide slide={ slide } />
     }
 };
 
