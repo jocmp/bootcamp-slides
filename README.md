@@ -4,13 +4,13 @@ Accelerator Bootcamp
 ### Sample server response
 ```json
 { 
-	"title": "title here",
-	"slides": [
-			{ 
-				"title": "title here",
-				"slide_type": "two-column",
-				"content": ["content 1", "content 2"]
-			}
+  "title": "title here",
+  "slides": [
+	  { 
+		  "title": "title here",
+	      "slide_type": "two-column",
+		  "content": ["content 1", "content 2"]
+	  }
 	]
 }
 ```

@@ -1,6 +1,7 @@
 import { SlideModel, SlideshowModel } from './Models'
 
 export interface SlideshowOwnProps {
+    history: any;
     match: { params: any };
 }
 
@@ -11,7 +12,8 @@ export interface SlideshowStateProps {
 }
 
 export interface SlideshowDispatchProps {
-    handleNextClick: any; 
+    handleNextSlide: (id: string, index: string, length: number, history: any) => any; 
+    handlePreviousSlide: (id: string, index: string, length: number, history: any) => any; 
     fetchSlideshow: (id: number) => void;
 }
 

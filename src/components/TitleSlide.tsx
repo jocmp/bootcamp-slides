@@ -1,8 +1,13 @@
 import * as React from 'react'
 import { SlideProps } from '../Props'
+import '../stylesheets/Slides.css'
 
 const TitleSlide = (props: SlideProps) => {
-    return <h1 className="title-slide">{props.slide.title}</h1>;
+    return(
+        <div className="title-slide">
+            <h1>{props.slide.title}</h1>
+        </div>
+    );
 };
 
 export default TitleSlide;

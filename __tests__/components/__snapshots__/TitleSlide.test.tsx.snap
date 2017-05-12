@@ -1,6 +1,8 @@
 exports[`TitleSlide renders 1`] = `
-<h1
+<div
   className="title-slide">
-  Stop-n-Go: Dijkstra Presents Semaphores
-</h1>
+  <h1>
+    Stop-n-Go: Dijkstra Presents Semaphores
+  </h1>
+</div>
 `;

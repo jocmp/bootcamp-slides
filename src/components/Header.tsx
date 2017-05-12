@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../App.css'
+import '../stylesheets/App.css'
 
 const logo = require('../assets/logo.jpg')
 

@@ -1,11 +1,22 @@
 exports[`Slideshow renders 1`] = `
-<div>
-  <h3>
-     at 
+<div
+  className="slideshow-container">
+  <h3
+    className="progess">
+    Slideshow 
+    : 
+    NaN
+     of 
+    3
   </h3>
+  <div
+    className="slideshow" />
   <button
-    className="next-button"
-    onClick={[Function]}>
+    className="previous-button">
+    Previous
+  </button>
+  <button
+    className="next-button">
     Next
   </button>
 </div>
