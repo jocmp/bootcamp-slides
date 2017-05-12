@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Slideshow from '../components/Slideshow'
-import { nextSlide, fetchSlideshow } from '../actions'
+import { nextSlide, previousSlide, fetchSlideshow } from '../actions'
 import { SlideshowDispatchProps, SlideshowOwnProps, SlideshowStateProps } from '../Props'
 import { store } from '../index'
 import { AppState } from '../Models'
@@ -12,7 +12,8 @@ const mapStateToProps = (state: AppState): SlideshowStateProps => {
 };
 
 const mapDispatchToProps = (dispatch: any): SlideshowDispatchProps => ({
-    handleNextClick: (id, index, length, history) => () => history.push(nextSlide(id, index, length)),
+    handleNextSlide: (id, index, length, history) => () => history.push(nextSlide(id, index, length)),
+    handlePreviousSlide: (id, index, length, history) => () => history.push(previousSlide(id, index, length)),
     fetchSlideshow: (id) => dispatch(fetchSlideshow(id))
 });
 

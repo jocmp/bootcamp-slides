@@ -2,25 +2,20 @@ import { SlideshowModel } from '../Models'
 import { push } from 'react-router-redux'
 import { History } from 'history'
 
-export const handleNextSlide = (id: string, index: string, totalLength: number, history: History) => (dispatch: any, getState: any) => {
-    return () => {
-        const currentIndex = parseInt(index);
-        const nextIndex: number = currentIndex < totalLength - 1 ? currentIndex + 1 : currentIndex;
-        handleDirection(id, nextIndex, history);   
-    }
+export const nextSlide = (id: string, index: string, totalLength: number) => {
+    const currentIndex = parseInt(index);
+    const nextIndex: number = currentIndex < totalLength - 1 ? currentIndex + 1 : currentIndex;
+    return getDirectionUrl(id, nextIndex);   
 }
 
-export const handlePreviousSlide = (id: string, index: string, totalLength: number, history: History) => {
-    return () => {
-        const currentIndex = parseInt(index);
-        const previousIndex: number = currentIndex > 0 ? currentIndex - 1 : currentIndex;
-        handleDirection(id, previousIndex, history);
-    }
+export const previousSlide = (id: string, index: string, totalLength: number) => {
+    const currentIndex = parseInt(index);
+    const previousIndex: number = currentIndex > 0 ? currentIndex - 1 : currentIndex;
+    return getDirectionUrl(id, previousIndex);
 }
 
-const handleDirection = (id: string, index: number, history: History) => {
-    const url: string = `/slideshows/${id}/slides/${index}`;
-    history.push(url);
+const getDirectionUrl = (id: string, index: number) => {
+    return `/slideshows/${id}/slides/${index}`;
 }
 
 const apiData: SlideshowModel = {

@@ -5,7 +5,6 @@ import { SlideshowModel, SlideModel } from '../../src/Models'
 import { shallow, ShallowWrapper } from 'enzyme'
 import toJson from 'enzyme-to-json'
 import createBrowserHistory from 'history/createBrowserHistory' 
-import { handleNextSlide, handlePreviousSlide } from '../../src/actions'
 
 describe('Slideshow', () => {
     const history = createBrowserHistory();

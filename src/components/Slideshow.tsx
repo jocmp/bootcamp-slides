@@ -30,16 +30,21 @@ class Slideshow extends React.Component<SlideshowProps, {}> {
         const params = this.props.match.params;
         return (
             <div className="slideshow-container">
-                <h3 className="progess">Slideshow {params.id }: {parseInt(params.index) + 1} of {this.props.slideshow.slides && this.props.slideshow.slides.length}</h3>
+                <h3 className="progess">Slideshow {params.id }: {parseInt(params.index) + 1} of {this.props.slideshow.slides 
+                    && this.props.slideshow.slides.length}</h3>
                 <div className="slideshow">
                     { hasSlideForProps(this.props) &&
                         getSlideFromType(this.props.slideshow.slides[params.index]) } 
                 </div>
                 <button className="previous-button" onClick={
-                        this.props.handlePreviousSlide(params.id, params.index, this.props.slideshow.slides.length, this.props.history)
+                        this.props.handlePreviousSlide(
+                            params.id, params.index, 
+                            this.props.slideshow.slides.length, this.props.history)
                     }>Previous</button>
                 <button className="next-button" onClick={
-                        this.props.handleNextSlide(params.id, params.index, this.props.slideshow.slides.length, this.props.history)
+                        this.props.handleNextSlide(
+                            params.id, params.index, 
+                            this.props.slideshow.slides.length, this.props.history)
                     }>Next</button>
             </div>
         )
