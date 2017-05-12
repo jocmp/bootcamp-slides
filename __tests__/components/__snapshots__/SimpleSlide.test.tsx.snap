@@ -1,0 +1,11 @@
+exports[`Simple Slide renders 1`] = `
+<div
+  className="simple-slide">
+  <h3>
+    Stop-n-Go: Dijkstra Presents Semaphores
+  </h3>
+  <p>
+    Everyone should wait their turn sometimes. It\'s a process.
+  </p>
+</div>
+`;
