@@ -1,8 +1,7 @@
 .title-slide h1 {
   font-size: 40pt;
-  height: 100%;
-  margin-top: 30%;
-  background: lime; }
+  padding: 20%;
+  vertical-align: center; }
 
 .simple-slide .row {
   width: 100%;
@@ -12,9 +11,7 @@
 .simple-slide h3 {
   font-size: 20pt;
   float: left;
-  padding-top: 16px;
-  background: lime; }
+  padding-top: 16px; }
 
 .simple-slide p {
-  float: left;
-  background: salmon; }
+  float: left; }

@@ -1,0 +1,13 @@
+.overview {
+  width: 20%;
+  display: block;
+  float: left;
+  margin-right: 4px;
+  margin-left: 2%;
+  border: 1px solid #4C4845;
+  height: 60vh;
+  margin-top: 10px;
+  text-align: left;
+  padding-left: 16px; }
+  .overview li {
+    text-align: left; }

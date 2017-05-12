@@ -1,13 +1,14 @@
 .slideshow-container {
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%; }
+  width: 55%;
+  margin-right: 20%;
+  display: block;
+  float: left; }
 
 .slideshow {
   height: 60vh;
   vertical-align: center;
   margin-top: 10px;
-  border: 1px solid black; }
+  border: 1px solid #4C4845; }
 
 .directional-button, .next-button, .previous-button {
   display: inline-block;
