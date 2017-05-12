@@ -11,10 +11,51 @@
   border: 1px solid black;
  }
 
+.directional-button {
+  // https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_animate3
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 12pt;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px #999;
+  margin-top: 8px;
+
+  &:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  &:hover {
+    background-color: #3e8e41;
+  }
+}
+
 .next-button {
+  @extend .directional-button;
+  background-color: #337AB7;
   float: right;
+
+  &:hover {
+    background-color: #286090; 
+  }
 }
 
 .previous-button {
+  @extend .directional-button;
   float: left;
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  color: #333;
+
+  &:hover {
+    background-color: #E6E6E6;
+  }
 }

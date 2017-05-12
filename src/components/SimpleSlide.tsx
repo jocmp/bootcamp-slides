@@ -9,9 +9,13 @@ const hasContent = (props: SlideProps): boolean => {
 const SimpleSlide = (props: SlideProps) => {
     return(
         <div className="simple-slide">
-            <h3>{props.slide.title}</h3>
-            <p>{hasContent(props) && 
-                props.slide.content[0]}</p>
+            <div className="row">
+                <h3>{props.slide.title}</h3>
+            </div>
+            <div className="row">
+                <p>{hasContent(props) && 
+                    props.slide.content[0]}</p>
+            </div>
         </div>
     );
 };
