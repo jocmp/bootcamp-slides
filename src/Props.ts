@@ -12,7 +12,8 @@ export interface SlideshowStateProps {
 }
 
 export interface SlideshowDispatchProps {
-    handleNextClick: (id: number, index: number, length: number, history: any) => any; 
+    handleNextSlide: (id: number, index: number, length: number, history: any) => any; 
+    handlePreviousSlide: (id: number, index: number, length: number, history: any) => any; 
     fetchSlideshow: (id: number) => void;
 }
 

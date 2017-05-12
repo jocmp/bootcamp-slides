@@ -6,7 +6,7 @@ export interface SlideshowModel {
 
 export interface SlideModel {
     title: string;
-    slide_type: string;
+    slide_type: "title" | "simple" | "two-column";
     content?: string[];
 }
 

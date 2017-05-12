@@ -12,10 +12,7 @@ const mapStateToProps = (state: AppState): SlideshowStateProps => {
 };
 
 const mapDispatchToProps = (dispatch: any): SlideshowDispatchProps => ({
-    handleNextClick: (id, index, length, history) => {
-        debugger
-       return (() => history.push(nextSlide(id, index, length)))
-    },
+    handleNextClick: (id, index, length, history) => () => history.push(nextSlide(id, index, length)),
     fetchSlideshow: (id) => dispatch(fetchSlideshow(id))
 });
 
