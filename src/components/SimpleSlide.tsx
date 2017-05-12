@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { SlideProps } from '../Props'
-import '../stylesheets/Slides.css'
+import '../../public/stylesheets/Slides.css'
 
 const hasContent = (props: SlideProps): boolean => {
    return !!(props.slide && props.slide.content && props.slide.content[0]); 

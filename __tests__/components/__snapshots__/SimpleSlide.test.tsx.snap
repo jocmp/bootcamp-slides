@@ -1,11 +1,17 @@
 exports[`Simple Slide renders 1`] = `
 <div
   className="simple-slide">
-  <h3>
-    Stop-n-Go: Dijkstra Presents Semaphores
-  </h3>
-  <p>
-    Everyone should wait their turn sometimes. It\'s a process.
-  </p>
+  <div
+    className="row">
+    <h3>
+      Stop-n-Go: Dijkstra Presents Semaphores
+    </h3>
+  </div>
+  <div
+    className="row">
+    <p>
+      Everyone should wait their turn sometimes. It\'s a process.
+    </p>
+  </div>
 </div>
 `;
