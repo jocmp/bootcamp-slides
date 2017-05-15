@@ -4,7 +4,7 @@ import SimpleSlide from './SimpleSlide'
 import { SlideshowProps } from '../Props'
 import { SlideModel, SlideshowModel } from '../Models'
 import OverviewItem from './OverviewItem'
-import '../../public/stylesheets/Overview.css'
+import '../stylesheets/Overview.scss'
 
 const getSlides = (slideshow: SlideshowModel): SlideModel[] => {
     if (!slideshow || !slideshow.slides) {

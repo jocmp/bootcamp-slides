@@ -3,7 +3,7 @@ import TitleSlide from './TitleSlide'
 import SimpleSlide from './SimpleSlide'
 import { SlideshowProps } from '../Props'
 import { SlideModel } from '../Models'
-import '../../public/stylesheets/Slideshow.css'
+import '../stylesheets/Slideshow.scss'
 import Overview from './Overview'
 
 const getSlideFromType = (slide: SlideModel) => {
