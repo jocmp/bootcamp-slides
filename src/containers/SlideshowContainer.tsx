@@ -1,8 +1,9 @@
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Slideshow from '../components/Slideshow'
 import { nextSlide, previousSlide, fetchSlideshow } from '../actions'
 import { SlideshowDispatchProps, SlideshowOwnProps, SlideshowStateProps } from '../Props'
-import { store } from '../index'
+import { store } from '../components/App'
 import { AppState } from '../Models'
 
 const mapStateToProps = (state: AppState): SlideshowStateProps => {
@@ -17,9 +18,9 @@ const mapDispatchToProps = (dispatch: any): SlideshowDispatchProps => ({
     fetchSlideshow: (id) => dispatch(fetchSlideshow(id))
 });
 
-const SlideshowContainer = connect<SlideshowStateProps, SlideshowDispatchProps, SlideshowOwnProps>(
+const SlideshowContainer = withRouter<any>(connect<SlideshowStateProps, SlideshowDispatchProps, SlideshowOwnProps>(
     mapStateToProps,
     mapDispatchToProps
-)(Slideshow);
+)(Slideshow));
 
 export default SlideshowContainer as any;
