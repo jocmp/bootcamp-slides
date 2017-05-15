@@ -1,7 +1,7 @@
 import * as React from 'react';
 import '../stylesheets/App.scss'
 
-const logo = require('../assets/logo.svg')
+const logo = require('../assets/logo.svg');
 
 const Header = () => {
     return (

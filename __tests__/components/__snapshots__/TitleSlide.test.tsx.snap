@@ -1,6 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`TitleSlide renders 1`] = `
 <div
-  className="title-slide">
+  className="title-slide"
+>
   <h1>
     Stop-n-Go: Dijkstra Presents Semaphores
   </h1>
