@@ -1,0 +1,18 @@
+@import "./colors";
+
+.overview {
+    width: 20%;
+    display: block;
+    float: left;
+    margin-right: 4px;
+    margin-left: 2%;
+    border: 1px solid $black;
+    height: 60vh;
+    margin-top: 10px;
+    text-align: left;
+    padding-left: 16px;
+
+    li {
+        text-align: left;
+    }
+}

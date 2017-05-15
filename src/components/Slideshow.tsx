@@ -3,7 +3,8 @@ import TitleSlide from './TitleSlide'
 import SimpleSlide from './SimpleSlide'
 import { SlideshowProps } from '../Props'
 import { SlideModel } from '../Models'
-import '../../public/stylesheets/Slideshow.css'
+import '../stylesheets/Slideshow.scss'
+import Overview from './Overview'
 
 const getSlideFromType = (slide: SlideModel) => {
     switch(slide.slide_type) {
@@ -31,23 +32,24 @@ class Slideshow extends React.Component<SlideshowProps, {}> {
     render() {
         const params = this.props.match.params;
         return (
-            <div className="slideshow-container">
-                <h3 className="progess">Slideshow {params.id }: {parseInt(params.index) + 1} of {this.props.slideshow.slides 
-                    && this.props.slideshow.slides.length}</h3>
-                <div className="slideshow">
-                    { hasSlideForProps(this.props) &&
-                        getSlideFromType(this.props.slideshow.slides[params.index]) } 
+            <div>
+                <Overview slideshow={this.props.slideshow} />
+                <div className="slideshow-container">
+                    <div className="slideshow">
+                        { hasSlideForProps(this.props) &&
+                            getSlideFromType(this.props.slideshow.slides[params.index]) } 
+                    </div>
+                    <button className="previous-button" onClick={
+                            this.props.handlePreviousSlide(
+                                params.id, params.index, 
+                                this.props.slideshow.slides.length, this.props.history)
+                        }>Previous</button>
+                    <button className="next-button" onClick={
+                            this.props.handleNextSlide(
+                                params.id, params.index, 
+                                this.props.slideshow.slides.length, this.props.history)
+                        }>Next</button>
                 </div>
-                <button className="previous-button" onClick={
-                        this.props.handlePreviousSlide(
-                            params.id, params.index, 
-                            this.props.slideshow.slides.length, this.props.history)
-                    }>Previous</button>
-                <button className="next-button" onClick={
-                        this.props.handleNextSlide(
-                            params.id, params.index, 
-                            this.props.slideshow.slides.length, this.props.history)
-                    }>Next</button>
             </div>
         )
     }

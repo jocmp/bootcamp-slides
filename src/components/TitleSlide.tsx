@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { SlideProps } from '../Props'
-import '../../public/stylesheets/Slides.css'
+import '../stylesheets/Slides.scss'
 
 const TitleSlide = (props: SlideProps) => {
     return(
