@@ -31,7 +31,7 @@ describe('Slideshow', () => {
             const currentIndex: string = "0";
             const nextListener = jest.fn();
 
-            const wrapper = shallow(<Slideshow slideshow={show} match={ { params: {}} }  
+            const wrapper = shallow(<Slideshow slideshow={show} match={ { params: { index: 1 }} }  
                     handleNextSlide={nextListener} handlePreviousSlide={jest.fn()} history={history} fetchSlideshow={(id: number) => show} />)
             wrapper.find('.next-button').simulate('click') // optionally: stubbed out text edit event
             expect(nextListener).toHaveBeenCalled();
@@ -43,7 +43,7 @@ describe('Slideshow', () => {
             const currentIndex: string = "1";
             const previousListener = jest.fn();
 
-            const wrapper = shallow(<Slideshow slideshow={show} match={ { params: {}} }  
+            const wrapper = shallow(<Slideshow slideshow={show} match={ { params: { index: 2 }} }  
                     handleNextSlide={jest.fn()} handlePreviousSlide={previousListener} history={history} fetchSlideshow={(id: number) => show} />)
             wrapper.find('.previous-button').simulate('click');
             expect(previousListener).toHaveBeenCalled();

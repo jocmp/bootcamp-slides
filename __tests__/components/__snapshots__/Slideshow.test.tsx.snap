@@ -31,12 +31,12 @@ exports[`Slideshow renders 1`] = `
       className="slideshow"
     />
     <button
-      className="previous-button"
+      className="invisible"
     >
       Previous
     </button>
     <button
-      className="next-button"
+      className="invisible"
     >
       Next
     </button>
