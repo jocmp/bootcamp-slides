@@ -12,4 +12,5 @@ export interface SlideModel {
 
 export interface AppState {
     slideshow: SlideshowModel;
+    viewedIndices: number[];
 }

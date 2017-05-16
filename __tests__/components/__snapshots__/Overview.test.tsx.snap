@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Overview renders 1`] = `
+<div
+  className="overview"
+>
+  <h4>
+    Overview
+  </h4>
+  <ul>
+    <OverviewItem
+      index={0}
+      slide={
+        Object {
+          "slide_type": "title",
+          "title": "Exciting Slide",
+        }
+      }
+      slideshow_id={1}
+      viewed={false}
+    />
+    <OverviewItem
+      index={1}
+      slide={
+        Object {
+          "slide_type": "title",
+          "title": "Exciting Slide",
+        }
+      }
+      slideshow_id={1}
+      viewed={false}
+    />
+    <OverviewItem
+      index={2}
+      slide={
+        Object {
+          "slide_type": "title",
+          "title": "Exciting Slide",
+        }
+      }
+      slideshow_id={1}
+      viewed={false}
+    />
+  </ul>
+</div>
+`;

@@ -23,6 +23,7 @@ exports[`Slideshow renders 1`] = `
         "title": "Exciting Presentation",
       }
     }
+    viewedIndices={Array []}
   />
   <div
     className="slideshow-container"

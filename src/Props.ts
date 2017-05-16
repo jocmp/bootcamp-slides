@@ -5,26 +5,30 @@ export interface SlideshowOwnProps {
     match: { params: any };
 }
 
-export interface SlideshowProps extends SlideshowStateProps, SlideshowDispatchProps, SlideshowOwnProps {};
+export interface SlideshowProps extends SlideshowStateProps, SlideshowDispatchProps, SlideshowOwnProps { };
 
 export interface SlideshowStateProps {
-     slideshow: SlideshowModel;
+    slideshow: SlideshowModel;
+    viewedIndices: number[];
 }
 
 export interface SlideshowDispatchProps {
-    handleNextSlide: (id: string, index: string, length: number, history: any) => any; 
-    handlePreviousSlide: (id: string, index: string, length: number, history: any) => any; 
-    fetchSlideshow: (id: number) => void;
+    handleNextSlide: (id: string, index: string, length: number, history: any) => any;
+    handlePreviousSlide: (id: string, index: string, length: number, history: any) => any;
+    fetchSlideshow: (id: number, index: number) => void;
+    viewSlide: (id: number) => any;
 }
 
 export interface OverviewProps {
     slideshow: SlideshowModel;
+    viewedIndices: number[];
 }
 
 export interface OverviewItemProps {
     slideshow_id: number;
     index: number;
     slide: SlideModel;
+    viewed: boolean;
 }
 
 export interface SlideProps {

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OverviewItem renders 1`] = `
+<li
+  className="overview-item"
+>
+  Exciting Slide
+</li>
+`;
