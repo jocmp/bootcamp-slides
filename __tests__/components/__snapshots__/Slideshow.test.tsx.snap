@@ -1,23 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Slideshow renders 1`] = `
-<div
-  className="slideshow-container">
-  <h3
-    className="progess">
-    Slideshow 
-    : 
-    NaN
-     of 
-    3
-  </h3>
+<div>
+  <Overview
+    slideshow={
+      Object {
+        "id": 1,
+        "slides": Array [
+          Object {
+            "slide_type": "title",
+            "title": "Exciting Slide",
+          },
+          Object {
+            "slide_type": "title",
+            "title": "Exciting Slide",
+          },
+          Object {
+            "slide_type": "title",
+            "title": "Exciting Slide",
+          },
+        ],
+        "title": "Exciting Presentation",
+      }
+    }
+  />
   <div
-    className="slideshow" />
-  <button
-    className="previous-button">
-    Previous
-  </button>
-  <button
-    className="next-button">
-    Next
-  </button>
+    className="slideshow-container"
+  >
+    <div
+      className="slideshow"
+    />
+    <button
+      className="invisible"
+    >
+      Previous
+    </button>
+    <button
+      className="invisible"
+    >
+      Next
+    </button>
+  </div>
 </div>
 `;

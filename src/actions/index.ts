@@ -1,6 +1,4 @@
 import { SlideshowModel } from '../Models'
-import { push } from 'react-router-redux'
-import { History } from 'history'
 
 export const nextSlide = (id: string, index: string, totalLength: number) => {
     const currentIndex = parseInt(index);
@@ -14,7 +12,7 @@ export const previousSlide = (id: string, index: string, totalLength: number) =>
     return getDirectionUrl(id, previousIndex);
 }
 
-const getDirectionUrl = (id: string, index: number) => {
+export const getDirectionUrl = (id: string, index: number) => {
     return `/slideshows/${id}/slides/${index}`;
 }
 

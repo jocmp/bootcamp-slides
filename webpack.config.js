@@ -8,6 +8,12 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
     entry: ['./src/index.tsx'],
+    devServer: {
+        port: 8080,
+        historyApiFallback: {
+            index: 'index.html'
+        }
+    },
     output: {
         filename: 'bundle.js',
         publicPath: "assets/",

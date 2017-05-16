@@ -1,16 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Simple Slide renders 1`] = `
 <div
-  className="simple-slide">
+  className="simple-slide"
+>
   <div
-    className="row">
+    className="row"
+  >
     <h3>
       Stop-n-Go: Dijkstra Presents Semaphores
     </h3>
   </div>
   <div
-    className="row">
+    className="row"
+  >
     <p>
-      Everyone should wait their turn sometimes. It\'s a process.
+      Everyone should wait their turn sometimes. It's a process.
     </p>
   </div>
 </div>
