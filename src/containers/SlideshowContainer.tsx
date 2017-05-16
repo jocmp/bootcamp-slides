@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import Slideshow from '../components/Slideshow'
 import { nextSlide, previousSlide, fetchSlideshow } from '../actions'
 import { SlideshowDispatchProps, SlideshowOwnProps, SlideshowStateProps } from '../Props'
-import { store } from '../components/App'
 import { AppState } from '../Models'
 
 const mapStateToProps = (state: AppState): SlideshowStateProps => {

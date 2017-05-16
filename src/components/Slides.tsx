@@ -1,7 +1,6 @@
 import * as React from 'react';
 import TitleSlide from './TitleSlide';
 import SimpleSlide from './SimpleSlide';
-import { SlideModel } from '../Models';
 import { SlideProps } from '../Props';
 
 const initialState: SlideProps = {

@@ -1,7 +1,4 @@
 import * as React from 'react'
-import TitleSlide from './TitleSlide'
-import SimpleSlide from './SimpleSlide'
-import { SlideModel } from '../Models'
 import { OverviewItemProps } from '../Props'
 import '../stylesheets/Overview.scss'
 

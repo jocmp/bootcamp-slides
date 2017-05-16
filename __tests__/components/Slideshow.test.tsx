@@ -1,8 +1,7 @@
 import * as React from 'react'
 import Slideshow from '../../src/components/Slideshow'
-import { SlideshowProps } from '../../src/Props' 
 import { SlideshowModel, SlideModel } from '../../src/Models'
-import { shallow, ShallowWrapper } from 'enzyme'
+import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
 import createBrowserHistory from 'history/createBrowserHistory' 
 
@@ -28,7 +27,6 @@ describe('Slideshow', () => {
 
     describe('next slide event', () => {
         it('responds to next click', () => {
-            const currentIndex: string = "0";
             const nextListener = jest.fn();
 
             const wrapper = shallow(<Slideshow slideshow={show} match={ { params: { index: 1 }} }  
@@ -40,7 +38,6 @@ describe('Slideshow', () => {
 
     describe('previous slide event', () => {
         it('responds to previous click', () => {
-            const currentIndex: string = "1";
             const previousListener = jest.fn();
 
             const wrapper = shallow(<Slideshow slideshow={show} match={ { params: { index: 2 }} }  
