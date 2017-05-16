@@ -2,7 +2,7 @@ import * as React from 'react';
 import Header from './Header';
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-import createHistory from 'history/createBrowserHistory'
+import createBrowserHistory from 'history/createBrowserHistory'
 import thunk from 'redux-thunk'
 import rootReducer from '../reducers/reducers'
 import {
@@ -15,20 +15,25 @@ import Home from './Home'
 import Slides from './Slides'
 import SlideshowContainer from '../containers/SlideshowContainer'
 
-const history = createHistory();
+const history = createBrowserHistory();
 
-export const store = createStore(rootReducer,
-  applyMiddleware(routerMiddleware(history)));
+export const store = createStore(
+  rootReducer,
+  applyMiddleware(thunk)
+);
 store.subscribe(() => console.log(store.getState()))
 
 const App = () => (
-  <Router>
-    <div>
-      <Route exact path="/" component={Home} />
-      <Route path="/slideshows/:id/slides/:index" component={SlideshowContainer} />
-      <Route path="/#/a" component={Slides} />
-    </div>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Header />
+        <Route exact path="/" component={Home} />
+        <Route path="/slideshows/:id/slides/:index" component={SlideshowContainer} />
+        <Route path="/#/a" component={Slides} />
+      </div>
+    </Router>
+  </Provider>
 );
 
 export default App;

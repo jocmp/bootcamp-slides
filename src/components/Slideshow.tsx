@@ -33,7 +33,6 @@ class Slideshow extends React.Component<SlideshowProps, {}> {
         debugger
         return (
             <div>
-                <p>hey</p>
                 <Overview slideshow={this.props.slideshow} />
                 <div className="slideshow-container">
                     <div className="slideshow">

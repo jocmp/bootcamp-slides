@@ -8,7 +8,6 @@ const initialState: SlideModel = {
     slide_type: "title",
 }
 const Slides = (slide: any = initialState) => {
-    debugger
     switch (slide.slide_type) {
         case "simple":
             return <SimpleSlide slide={slide} />
