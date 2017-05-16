@@ -9,19 +9,19 @@ describe('Overview', () => {
     const slide: SlideModel = {
         title: "Exciting Slide",
         slide_type: "title"
-    }; 
+    };
 
     const show: SlideshowModel = {
         id: 1,
         title: "Exciting Presentation",
-        slides: [ slide, slide, slide ]
+        slides: [slide, slide, slide]
     };
 
     const viewed: number[] = [];
 
     it('renders', () => {
         const wrapper = shallow(
-            <Overview viewSlide={jest.fn()} viewedIndices={viewed} slideshow={show} />)
+            <Overview match={{ params: {} }} viewSlide={jest.fn()} viewedIndices={viewed} slideshow={show} />)
         expect(toJson(wrapper)).toMatchSnapshot()
     });
 }); 

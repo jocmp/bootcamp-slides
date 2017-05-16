@@ -47,7 +47,7 @@ class Slideshow extends React.Component<SlideshowProps, {}> {
         const params = this.props.match.params;
         return (
             <div>
-                <Overview viewSlide={this.props.viewSlide} viewedIndices={this.props.viewedIndices} slideshow={this.props.slideshow} />
+                <Overview match={this.props.match} viewSlide={this.props.viewSlide} viewedIndices={this.props.viewedIndices} slideshow={this.props.slideshow} />
                 <div className="slideshow-container">
                     <div className="slideshow">
                         {hasSlide(this.props) &&

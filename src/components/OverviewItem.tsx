@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 
 const OverviewItem = (props: OverviewItemProps) => {
     return (
-        <li className={props.viewed ? "overview-item-viewed" : "overview-item"}>
+        <li className={props.isCurrent ? "overview-item-current" : "overview-item"}>
+            <span className={props.viewed ? "item-check" : "invisible"}>✔️</span>
             <Link onClick={() => props.viewSlide(props.index)} to={`/slideshows/${props.slideshow_id}/slides/${props.index}`}>
                 {props.slide.title}
             </Link>

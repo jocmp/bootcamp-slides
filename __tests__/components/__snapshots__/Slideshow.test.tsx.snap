@@ -3,6 +3,11 @@
 exports[`Slideshow renders 1`] = `
 <div>
   <Overview
+    match={
+      Object {
+        "params": Object {},
+      }
+    }
     slideshow={
       Object {
         "id": 1,

@@ -10,6 +10,7 @@ exports[`Overview renders 1`] = `
   <ul>
     <OverviewItem
       index={0}
+      isCurrent={false}
       slide={
         Object {
           "slide_type": "title",
@@ -17,10 +18,12 @@ exports[`Overview renders 1`] = `
         }
       }
       slideshow_id={1}
+      viewSlide={[Function]}
       viewed={false}
     />
     <OverviewItem
       index={1}
+      isCurrent={false}
       slide={
         Object {
           "slide_type": "title",
@@ -28,10 +31,12 @@ exports[`Overview renders 1`] = `
         }
       }
       slideshow_id={1}
+      viewSlide={[Function]}
       viewed={false}
     />
     <OverviewItem
       index={2}
+      isCurrent={false}
       slide={
         Object {
           "slide_type": "title",
@@ -39,6 +44,7 @@ exports[`Overview renders 1`] = `
         }
       }
       slideshow_id={1}
+      viewSlide={[Function]}
       viewed={false}
     />
   </ul>

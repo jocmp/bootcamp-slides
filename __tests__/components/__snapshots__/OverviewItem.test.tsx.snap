@@ -4,6 +4,11 @@ exports[`OverviewItem renders 1`] = `
 <li
   className="overview-item"
 >
+  <span
+    className="invisible"
+  >
+    ✔️
+  </span>
   <Link
     onClick={[Function]}
     replace={false}
