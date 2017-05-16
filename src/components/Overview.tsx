@@ -19,8 +19,8 @@ const Overview = (props: any) => {
             <div className="overview">
                 <h4>Overview</h4>
                 <ul>
-                    { slides.map(slide =>
-                        <OverviewItem slide={slide} />
+                    { slides.map((slide, index) =>
+                        <OverviewItem key={index} slide={slide} />
                     )}
                 </ul>
             </div>

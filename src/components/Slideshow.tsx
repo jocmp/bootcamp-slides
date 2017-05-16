@@ -18,26 +18,25 @@ const initialState: SlideshowProps = {
     }
 };
 
-const hasSlide = (props: SlideshowProps) =>
-    !!(props.slideshow && props.slideshow.slides && props.slideshow.slides.length);
+const hasSlide = (props: SlideshowProps): boolean =>
+    !!(props.slideshow && props.slideshow.slides && props.slideshow.slides[props.match.params.index]);
 
 class Slideshow extends React.Component<SlideshowProps, {}> {
 
     componentDidMount() {
         this.props.fetchSlideshow(this.props.match.params.id)
-        console.log(this.props.match.params.id);
     }
 
     render() {
         const params = this.props.match.params;
-        debugger
         return (
             <div>
                 <Overview slideshow={this.props.slideshow} />
                 <div className="slideshow-container">
                     <div className="slideshow">
-                        <Slides slide={hasSlide(this.props) &&
-                            this.props.slideshow[this.props.match.params.index]} />
+                        {hasSlide(this.props) &&
+                            <Slides slide={this.props.slideshow.slides[this.props.match.params.index]} />
+                        }
                     </div>
                     <button className="previous-button" onClick={
                         this.props.handlePreviousSlide(

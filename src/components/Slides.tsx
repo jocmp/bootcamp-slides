@@ -2,19 +2,23 @@ import * as React from 'react';
 import TitleSlide from './TitleSlide';
 import SimpleSlide from './SimpleSlide';
 import { SlideModel } from '../Models';
+import { SlideProps } from '../Props';
 
-const initialState: SlideModel = {
-    title: "",
-    slide_type: "title",
-}
-const Slides = (slide: any = initialState) => {
-    switch (slide.slide_type) {
+const initialState: SlideProps = {
+    slide: {
+        title: "",
+        slide_type: "title",
+    }
+};
+
+const Slides = (props: SlideProps = initialState) => {
+    switch (props.slide.slide_type) {
         case "simple":
-            return <SimpleSlide slide={slide} />
+            return <SimpleSlide slide={props.slide} />
         case "two-column":
         case "title":
         default:
-            return <TitleSlide slide={slide} />
+            return <TitleSlide slide={props.slide} />
     }
 };
 

@@ -17,6 +17,9 @@ export interface SlideshowDispatchProps {
     fetchSlideshow: (id: number) => void;
 }
 
+export interface OverviewItemProps {
+    slide: SlideModel;
+}
 
 export interface SlideProps {
     slide: SlideModel;
