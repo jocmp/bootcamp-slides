@@ -22,6 +22,7 @@ export interface SlideshowDispatchProps {
 export interface OverviewProps {
     slideshow: SlideshowModel;
     viewedIndices: number[];
+    viewSlide: (id: number) => any;
 }
 
 export interface OverviewItemProps {
@@ -29,6 +30,7 @@ export interface OverviewItemProps {
     index: number;
     slide: SlideModel;
     viewed: boolean;
+    viewSlide: (id: number) => any;
 }
 
 export interface SlideProps {

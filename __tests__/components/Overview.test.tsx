@@ -21,7 +21,7 @@ describe('Overview', () => {
 
     it('renders', () => {
         const wrapper = shallow(
-            <Overview viewedIndices={viewed} slideshow={show} />)
+            <Overview viewSlide={jest.fn()} viewedIndices={viewed} slideshow={show} />)
         expect(toJson(wrapper)).toMatchSnapshot()
     });
 }); 

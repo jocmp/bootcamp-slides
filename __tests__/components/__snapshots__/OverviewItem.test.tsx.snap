@@ -4,6 +4,12 @@ exports[`OverviewItem renders 1`] = `
 <li
   className="overview-item"
 >
-  Exciting Slide
+  <Link
+    onClick={[Function]}
+    replace={false}
+    to="/slideshows/1/slides/0"
+  >
+    Exciting Slide
+  </Link>
 </li>
 `;

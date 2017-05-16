@@ -63,7 +63,7 @@ const apiData = (index: number): SlideshowModel => {
             ]
         }
     ]
-    return shows[index];
+    return shows[index - 1];
 };
 
 export const loadSlideshow = (slideshow: SlideshowModel, currentIndex: number) => {

@@ -23,6 +23,7 @@ exports[`Slideshow renders 1`] = `
         "title": "Exciting Presentation",
       }
     }
+    viewSlide={[Function]}
     viewedIndices={Array []}
   />
   <div
