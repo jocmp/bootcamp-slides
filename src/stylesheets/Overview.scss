@@ -12,7 +12,25 @@
     text-align: left;
     padding-left: 16px;
 
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
     li {
         text-align: left;
     }
+}
+
+.overview-item {
+    a {
+        padding-left: 4px;
+        text-decoration: none;
+        color: $black
+    }
+}
+
+.overview-item-current {
+    @extend .overview-item;
+    font-weight: bold;
 }

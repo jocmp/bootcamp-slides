@@ -11,18 +11,26 @@ const getSlides = (slideshow: SlideshowModel): SlideModel[] => {
     return slideshow.slides;
 };
 
+const isCurrent = (index: number, props: OverviewProps): boolean =>
+    parseInt(props.match.params.index) === index;
+
+const isViewed = (index: number, props: OverviewProps): boolean =>
+    props.viewedIndices.indexOf(index) >= 0;
+
 const Overview = (props: OverviewProps) => {
-        const slides = getSlides(props.slideshow);
-        return (
-            <div className="overview">
-                <h4>Overview</h4>
-                <ul>
-                    { slides.map((slide, index) =>
-                        <OverviewItem key={index} slideshow_id={props.slideshow.id} index={index} slide={slide} />
-                    )}
-                </ul>
-            </div>
-        )
+    const slides = getSlides(props.slideshow);
+    return (
+        <div className="overview">
+            <h4>Overview</h4>
+            <ul>
+                {slides.map((slide, index) =>
+                    <OverviewItem isCurrent={isCurrent(index, props)}
+                        viewSlide={props.viewSlide} viewed={isViewed(index, props)}
+                        key={index} slideshow_id={props.slideshow.id} index={index} slide={slide} />
+                )}
+            </ul>
+        </div>
+    )
 }
 
 export default Overview;

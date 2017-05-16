@@ -13,7 +13,7 @@ describe('OverviewItem', () => {
 
     it('renders', () => {
         const wrapper = shallow(
-            <OverviewItem slide={slide} slideshow_id={1} index={0} />)
+            <OverviewItem isCurrent={false} viewSlide={jest.fn()} viewed={false} slide={slide} slideshow_id={1} index={0} />)
         expect(toJson(wrapper)).toMatchSnapshot()
     });
 });

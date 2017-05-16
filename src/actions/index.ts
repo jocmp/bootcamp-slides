@@ -1,24 +1,33 @@
 import { SlideshowModel } from '../Models'
+import { History } from 'history';
 
-export const nextSlide = (id: string, index: string, totalLength: number) => {
+export const nextSlide = (id: string, index: string, totalLength: number, history: History) => {
     const currentIndex = parseInt(index);
     const nextIndex: number = currentIndex < totalLength - 1 ? currentIndex + 1 : currentIndex;
-    return getDirectionUrl(id, nextIndex);   
+    return handleSlide(id, nextIndex, history);
 }
 
-export const previousSlide = (id: string, index: string, totalLength: number) => {
+export const previousSlide = (id: string, index: string, totalLength: number, history: History) => {
     const currentIndex = parseInt(index);
     const previousIndex: number = currentIndex > 0 ? currentIndex - 1 : currentIndex;
-    return getDirectionUrl(id, previousIndex);
+    return handleSlide(id, previousIndex, history);
 }
 
-export const getDirectionUrl = (id: string, index: number) => {
-    return `/slideshows/${id}/slides/${index}`;
+const handleSlide = (id: string, index: number, history: History) => {
+    history.push(`/slideshows/${id}/slides/${index}`);
+    return viewSlide(index);
 }
 
-const apiData = (index: number): SlideshowModel =>  {
+export const viewSlide = (index: number) => {
+    return {
+        type: 'VIEW_SLIDE',
+        index
+    };
+}
+
+const apiData = (index: number): SlideshowModel => {
     const shows: SlideshowModel[] = [
-        {   
+        {
             id: 1,
             title: "Exceptional Presentation",
             slides: [
@@ -31,8 +40,9 @@ const apiData = (index: number): SlideshowModel =>  {
                     slide_type: "simple",
                     content: ["Inspirational insatiable"]
                 }
-            ]},
-        {   
+            ]
+        },
+        {
             id: 2,
             title: "Touch Fuzzy, Get Dizzy",
             slides: [
@@ -50,18 +60,20 @@ const apiData = (index: number): SlideshowModel =>  {
                     slide_type: "simple",
                     content: ["Yoshi's Island. No question."]
                 }
-            ]}
+            ]
+        }
     ]
-    return shows[index];
+    return shows[index - 1];
 };
 
-export const loadSlideshow = (slideshow: SlideshowModel) => {
+export const loadSlideshow = (slideshow: SlideshowModel, currentIndex: number) => {
     return {
         type: 'LOAD_SLIDESHOW',
-        slideshow
+        slideshow,
+        currentIndex
     }
 };
 
-export const fetchSlideshow = (id: number) => (dispatch: any, getState: any) => {
-    dispatch(loadSlideshow(apiData(id)));
+export const fetchSlideshow = (id: number, index: number = 0) => (dispatch: any, getState: any) => {
+    dispatch(loadSlideshow(apiData(id), index));
 };

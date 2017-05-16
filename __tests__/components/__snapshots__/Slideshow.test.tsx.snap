@@ -3,6 +3,11 @@
 exports[`Slideshow renders 1`] = `
 <div>
   <Overview
+    match={
+      Object {
+        "params": Object {},
+      }
+    }
     slideshow={
       Object {
         "id": 1,
@@ -23,6 +28,8 @@ exports[`Slideshow renders 1`] = `
         "title": "Exciting Presentation",
       }
     }
+    viewSlide={[Function]}
+    viewedIndices={Array []}
   />
   <div
     className="slideshow-container"

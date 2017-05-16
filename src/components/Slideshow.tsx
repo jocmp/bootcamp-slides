@@ -22,13 +22,15 @@ class Slideshow extends React.Component<SlideshowProps, {}> {
         fetchSlideshow: null,
         handleNextSlide: null,
         handlePreviousSlide: null,
+        viewSlide: null,
         history: null,
         match: null,
         slideshow: {
             id: 0,
             title: "",
             slides: []
-        }
+        },
+        viewedIndices: []
     };
 
     constructor(props: SlideshowProps) {
@@ -37,14 +39,15 @@ class Slideshow extends React.Component<SlideshowProps, {}> {
     }
 
     componentDidMount() {
-        this.props.fetchSlideshow(this.props.match.params.id)
+        this.props.viewSlide(parseInt(this.props.match.params.index));
+        this.props.fetchSlideshow(this.props.match.params.id, this.props.match.params.index)
     }
 
     render() {
         const params = this.props.match.params;
         return (
             <div>
-                <Overview slideshow={this.props.slideshow} />
+                <Overview match={this.props.match} viewSlide={this.props.viewSlide} viewedIndices={this.props.viewedIndices} slideshow={this.props.slideshow} />
                 <div className="slideshow-container">
                     <div className="slideshow">
                         {hasSlide(this.props) &&
