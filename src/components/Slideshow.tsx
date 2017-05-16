@@ -3,8 +3,6 @@ import { SlideshowProps } from '../Props'
 import '../stylesheets/Slideshow.scss'
 import Overview from './Overview'
 import Slides from './Slides'
-import { viewSlide } from '../actions'
-import { store } from './App'
 
 const hasSlides = (props: SlideshowProps): boolean =>
     !!(props.slideshow && props.slideshow.slides);
