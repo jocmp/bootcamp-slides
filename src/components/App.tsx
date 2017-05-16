@@ -24,8 +24,8 @@ store.subscribe(() => console.log(store.getState()))
 const App = () => (
   <Router>
     <div>
-      {/*<Route exact path="/" component={Home} />*/}
-      {/*<Route path="/slideshows/:id/slides/:index" component={SlideshowContainer} />*/}
+      <Route exact path="/" component={Home} />
+      <Route path="/slideshows/:id/slides/:index" component={SlideshowContainer} />
       <Route path="/#/a" component={Slides} />
     </div>
   </Router>
