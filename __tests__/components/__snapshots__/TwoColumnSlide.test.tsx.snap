@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Two-Column Slide renders 1`] = `
+<div
+  className="two-column-slide"
+>
+  <div
+    className="row"
+  >
+    <h3>
+      Stop-n-Go: Dijkstra Presents Semaphores
+    </h3>
+  </div>
+  <div
+    className="row"
+  >
+    <TwoColumnContent
+      content="First panel"
+    />
+  </div>
+</div>
+`;

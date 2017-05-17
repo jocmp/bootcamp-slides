@@ -24,8 +24,6 @@ export const store = createStore(
   applyMiddleware(thunk)
 );
 
-console.log(store.getState());
-
 store.subscribe(() => console.log(store.getState()))
 
 const App = () => (
@@ -33,7 +31,7 @@ const App = () => (
     <Router>
       <div>
         <Header />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/:message" component={Home} />
         <Route path="/slideshows/:id/slides/:index" component={SlideshowContainer} />
       </div>
     </Router>

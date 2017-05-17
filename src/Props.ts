@@ -38,3 +38,7 @@ export interface OverviewItemProps {
 export interface SlideProps {
     slide: SlideModel;
 }
+
+export interface TwoColumnContentProps {
+    content: string;
+}

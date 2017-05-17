@@ -37,16 +37,6 @@ exports[`Slideshow renders 1`] = `
     <div
       className="slideshow"
     />
-    <button
-      className="invisible"
-    >
-      Previous
-    </button>
-    <button
-      className="invisible"
-    >
-      Next
-    </button>
   </div>
 </div>
 `;

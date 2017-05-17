@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Two-Column Content renders 1`] = `
+<div
+  className="slide-column"
+>
+  <p>
+    Test content
+  </p>
+</div>
+`;

@@ -2,19 +2,22 @@ import * as React from 'react'
 import { SlideProps } from '../Props'
 import '../stylesheets/Slides.scss'
 
-const hasContent = (props: SlideProps): boolean => {
-   return !!(props.slide && props.slide.content && props.slide.content[0]); 
+const initialState: SlideProps = {
+    slide: {
+        title: "",
+        slide_type: "simple",
+        content: [""]
+    }
 };
 
-const SimpleSlide = (props: SlideProps) => {
-    return(
+const SimpleSlide = (props: SlideProps = initialState) => {
+    return (
         <div className="simple-slide">
             <div className="row">
                 <h3>{props.slide.title}</h3>
             </div>
             <div className="row">
-                <p>{hasContent(props) && 
-                    props.slide.content[0]}</p>
+                <p>{props.slide.content[0]}</p>
             </div>
         </div>
     );
