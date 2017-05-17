@@ -4,6 +4,8 @@ exports[`Two-Column Content renders 1`] = `
 <div
   className="slide-column"
 >
-  Test content
+  <p>
+    Test content
+  </p>
 </div>
 `;

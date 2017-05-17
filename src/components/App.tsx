@@ -31,7 +31,7 @@ const App = () => (
     <Router>
       <div>
         <Header />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/:message" component={Home} />
         <Route path="/slideshows/:id/slides/:index" component={SlideshowContainer} />
       </div>
     </Router>

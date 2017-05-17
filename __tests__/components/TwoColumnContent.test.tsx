@@ -9,4 +9,14 @@ describe('Two-Column Content', () => {
         const wrapper = shallow(<TwoColumnContent content={"Test content"} />)
         expect(toJson(wrapper)).toMatchSnapshot();
     });
+
+    it('displays a picture', () => {
+        const wrapper = shallow(<TwoColumnContent content={"https://example.com/image.jpg"} />)
+        expect(wrapper.find('img')).toHaveLength(1);
+    });
+
+    it('displays text', () => {
+        const wrapper = shallow(<TwoColumnContent content={'Plain old vanilla text'} />);
+        expect(wrapper.find('p')).toHaveLength(1);
+    });
 });

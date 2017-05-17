@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-const Home = () => (
+const Home = (props: any) => (
     <div>
-        <code>Hello world.</code>
+        <code>Hello world from {props.match.params.message}</code>
     </div>
 );
 
