@@ -53,7 +53,7 @@ const apiData = (index: number): SlideshowModel => {
                 {
                     title: "Yoshi's Island",
                     slide_type: "simple",
-                    content: ['Imperically the best Super Mario game... \ntest']
+                    content: ['Imperically the best Super Mario game. It even included a graphics processor inside of the cartridge.']
                 },
                 {
                     title: "Why buy a SNES?",
