@@ -54,16 +54,20 @@ class Slideshow extends React.Component<SlideshowProps, {}> {
                             <Slides slide={this.props.slideshow.slides[this.props.match.params.index]} />
                         }
                     </div>
-                    <button className={hasPrevious(this.props) ? "previous-button" : "invisible"} onClick={
-                        this.props.handlePreviousSlide(
-                            params.id, params.index,
-                            this.props.slideshow.slides.length, this.props.history)
-                    }>Previous</button>
-                    <button className={hasNext(this.props) ? "next-button" : "invisible"} onClick={
-                        this.props.handleNextSlide(
-                            params.id, params.index,
-                            this.props.slideshow.slides.length, this.props.history)
-                    }>Next</button>
+                    {hasPrevious(this.props) &&
+                        <button className="previous-button" onClick={
+                            this.props.handlePreviousSlide(
+                                params.id, params.index,
+                                this.props.slideshow.slides.length, this.props.history)
+                        }>Previous</button>
+                    }
+                    {hasNext(this.props) &&
+                        <button className="next-button" onClick={
+                            this.props.handleNextSlide(
+                                params.id, params.index,
+                                this.props.slideshow.slides.length, this.props.history)
+                        }>Next</button>
+                    }
                 </div>
             </div>
         )

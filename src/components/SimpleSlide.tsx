@@ -3,7 +3,7 @@ import { SlideProps } from '../Props'
 import '../stylesheets/Slides.scss'
 
 const hasContent = (props: SlideProps): boolean => {
-   return !!(props.slide && props.slide.content && props.slide.content[0]); 
+   return !!(props.slide && props.slide.content && props.slide.content.length > 0); 
 };
 
 const SimpleSlide = (props: SlideProps) => {

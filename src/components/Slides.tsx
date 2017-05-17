@@ -1,6 +1,7 @@
 import * as React from 'react';
 import TitleSlide from './TitleSlide';
 import SimpleSlide from './SimpleSlide';
+import TwoColumnSlide from './TwoColumnSlide'
 import { SlideProps } from '../Props';
 
 const initialState: SlideProps = {
@@ -15,6 +16,7 @@ const Slides = (props: SlideProps = initialState) => {
         case "simple":
             return <SimpleSlide slide={props.slide} />
         case "two-column":
+            return <TwoColumnSlide slide={props.slide} />
         case "title":
         default:
             return <TitleSlide slide={props.slide} />

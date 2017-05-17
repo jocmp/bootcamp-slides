@@ -7,20 +7,38 @@
     }
 }
 
-.simple-slide {
+.content-slide {
+    h3 {
+        font-size: 20pt;
+        float: left;
+        padding-top: 16px;
+    }
+
     .row {
         width: 100%;
         display: inline-block;
         padding-left: 32px;
     }
-    h3 {
-        font-size: 20pt;
-        float: left;
-        padding-top: 16px;
-        // background: lime;
-    }
+}
+
+.simple-slide {
+    @extend .content-slide;
+
+
     p {
         float: left;
-        // background: salmon;
+    }
+}
+
+.two-column-slide {
+    @extend .content-slide;
+
+    .slide-column:nth-child(2) {
+        margin-left: 16px;
+    }
+
+    .slide-column {
+        width: 45%;
+        float: left;
     }
 }

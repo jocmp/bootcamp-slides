@@ -5,12 +5,10 @@ import { nextSlide, previousSlide, fetchSlideshow, viewSlide } from '../actions'
 import { SlideshowDispatchProps, SlideshowOwnProps, SlideshowStateProps } from '../Props'
 import { AppState } from '../Models'
 
-const mapStateToProps = (state: AppState): SlideshowStateProps => {
-    return {
-        slideshow: state.slideshow,
-        viewedIndices: state.viewedIndices
-    }
-};
+const mapStateToProps = (state: AppState): SlideshowStateProps => ({
+    slideshow: state.slideshow,
+    viewedIndices: state.viewedIndices
+});
 
 const mapDispatchToProps = (dispatch: any): SlideshowDispatchProps => ({
     handleNextSlide: (id, index, length, history) => () => dispatch(nextSlide(id, index, length, history)),
