@@ -14,11 +14,9 @@ exports[`Two-Column Slide renders 1`] = `
   <div
     className="row"
   >
-    <div
-      className="slide-column"
-    >
-      First panel
-    </div>
+    <TwoColumnContent
+      content="First panel"
+    />
   </div>
 </div>
 `;

@@ -1,6 +1,7 @@
-import * as React from 'react'
-import { SlideProps } from '../Props'
-import '../stylesheets/Slides.scss'
+import * as React from 'react';
+import { SlideProps } from '../Props';
+import '../stylesheets/Slides.scss';
+import TwoColumnContent from './TwoColumnContent';
 
 const TwoColumnSlide = (props: SlideProps) => {
     return (
@@ -10,9 +11,7 @@ const TwoColumnSlide = (props: SlideProps) => {
             </div>
             <div className="row">
                 {props.slide.content.map((content, index) =>
-                    <div key={index} className="slide-column">
-                        {content}
-                    </div>)
+                    <TwoColumnContent key={index} content={content} />)
                 }
             </div>
         </div>
