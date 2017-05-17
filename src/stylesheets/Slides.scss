@@ -40,5 +40,10 @@
     .slide-column {
         width: 45%;
         float: left;
+        
+        img {
+            width: 100%;
+            margin-right: 4px;
+        }
     }
 }

@@ -65,6 +65,14 @@ const apiData = (index: number): SlideshowModel => {
                     slide_type: "two-column",
                     content: ["By going into any level with a Fat Guy and carrying a Giant Yoshi Egg to the end of a level, the player must go to the edge of the screen past the exit and throw the egg up, then use Yoshi's tongue to push it slightly into the edge of the screen. By finishing the level like this, the next Yoshi will collect the egg as it appears to take Baby Mario, allowing the player to take a Giant Yoshi Egg into any level in the game.",
                     "Part of this game's \"character select\" theme is part of Yoshi's Island's \"Athletic\" theme. Shy Guys and Snifits also return in this game."]
+                },
+                {
+                    title: "Birds on Yoshi's Island",
+                    slide_type: "two-column",
+                    content: [
+                        "There are a few different bird species on Yoshi's Island. These include: Huffin Puffins and Goonies (pictured).",
+                        "https://i.imgur.com/SBaejMN.jpg"
+                    ]
                 }
             ]
         }
