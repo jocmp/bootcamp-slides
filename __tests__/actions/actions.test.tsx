@@ -1,4 +1,4 @@
-import { nextSlide, previousSlide } from '../../src/actions'
+import { nextSlide, previousSlide, loadSlideshowError } from '../../src/actions'
 
 describe('navigation', () => {
 
@@ -21,5 +21,11 @@ describe('navigation', () => {
         const action = previousSlide("1", currentIndex, 3, history);
 
         expect(action.index).toEqual(previousIndex);
+    });
+
+    it('returns error reason passed to it', () => {
+        const error = "No Slideshow Found.";
+
+        expect(loadSlideshowError(error).error).toEqual(error);
     });
 });

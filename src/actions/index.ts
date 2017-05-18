@@ -36,8 +36,22 @@ export const loadSlideshow = (slideshow: SlideshowModel, currentIndex: number) =
     }
 };
 
+export const loadSlideshowError = (error: any) => {
+    return {
+        type: 'LOAD_SLIDESHOW_ERROR',
+        error
+    }
+}
+
 export const fetchSlideshow = (id: number, index: number = 0) => (dispatch: any, getState: any) => {
     fetch(`${BASE_URL}/slideshows/${id}`)
-        .then((response: any) => response.json())
-        .then(json => dispatch(loadSlideshow(json, index)));
+        .then((response: any) => {
+            if (response.status === 404) {
+                return Promise.reject("No Slideshow Found");
+            } else {
+                return Promise.resolve(response.json());
+            }
+        })
+        .then(json => dispatch(loadSlideshow(json, index)))
+        .catch(error => dispatch(loadSlideshowError((error))));
 };

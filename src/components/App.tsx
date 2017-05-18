@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from '../reducers'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Home from './Home'
+import HomeContainer from '../containers/HomeContainer'
 import SlideshowContainer from '../containers/SlideshowContainer'
 import { AppState } from '../Models'
 
@@ -15,7 +15,8 @@ const initialState: AppState = {
         title: "",
         slides: []
     },
-    viewedIndices: []
+    viewedIndices: [],
+    error: null
 };
 
 export const store = createStore(
@@ -31,7 +32,7 @@ const App = () => (
     <Router>
       <div>
         <Header />
-        <Route exact path="/:message" component={Home} />
+        <Route exact path="/" component={HomeContainer} />
         <Route path="/slideshows/:id/slides/:index" component={SlideshowContainer} />
       </div>
     </Router>

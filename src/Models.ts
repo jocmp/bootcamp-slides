@@ -13,4 +13,12 @@ export interface SlideModel {
 export interface AppState {
     slideshow: SlideshowModel;
     viewedIndices: number[];
+    error: string;
+}
+
+export class LinkFactory {
+
+    static createSlideshowLink(id: number, index: number = 0) {
+        return `/slideshows/${id}/slides/${index}`
+    }
 }
