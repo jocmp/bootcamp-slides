@@ -37,10 +37,7 @@ export const loadSlideshow = (slideshow: SlideshowModel, currentIndex: number) =
 };
 
 export const fetchSlideshow = (id: number, index: number = 0) => (dispatch: any, getState: any) => {
-    return fetch(`${BASE_URL}/slideshows/${id}`)
+    fetch(`${BASE_URL}/slideshows/${id}`)
         .then((response: any) => response.json())
-        .then(json => {
-            console.log(json);
-            dispatch(loadSlideshow(json, index))
-        });
+        .then(json => dispatch(loadSlideshow(json, index)));
 };

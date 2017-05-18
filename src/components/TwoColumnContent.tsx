@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { TwoColumnContentProps } from '../Props'
 
+// https://mathiasbynens.be/demo/url-regex @stephenhay regex
 const URL_MATCHER = new RegExp('https?:\/\/[^\s/$.?#].[^\s]*.(jpe?g|gif|png)');
 
 const isLink = (content: string): boolean => {
