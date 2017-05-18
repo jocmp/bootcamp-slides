@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders 1`] = `
+<div
+  className="home-container"
+>
+  <label>
+    Slideshow ID
+  </label>
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <Link
+    className="slide-button"
+    replace={false}
+    to="/slideshows/1/slides/0"
+  >
+    Slideshow
+  </Link>
+</div>
+`;

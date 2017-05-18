@@ -49,6 +49,7 @@ export interface HomeDispatchProps {
 
 export interface HomeStateProps {
     slideshow: SlideshowModel;
+    loading: boolean;
     error: string;
 }
 

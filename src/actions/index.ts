@@ -54,4 +54,9 @@ export const fetchSlideshow = (id: number, index: number = 0) => (dispatch: any,
         })
         .then(json => dispatch(loadSlideshow(json, index)))
         .catch(error => dispatch(loadSlideshowError((error))));
+
+    return {
+        type: 'FETCH_SLIDESHOW',
+        loading: true
+    }
 };
