@@ -27,12 +27,12 @@ const slideshow = (state: AppState, action: any) => {
     }
 }
 
-const fetchSlideshow = (state: AppState, action: any) => {
+const loading = (state: AppState, action: any) => {
     switch (action.type) {
         case 'FETCH_SLIDESHOW':
             return action.loading;
         default:
-            return false;
+            return loading;
     }
 }
 
@@ -40,15 +40,18 @@ const error = (state: AppState, action: any) => {
     switch (action.type) {
         case 'LOAD_SLIDESHOW_ERROR':
             return action.error;
+        case 'CLEAR_ERROR':
+            return '';
         default:
             return '';
     }
 }
 
+
 const rootReducer = combineReducers({
     slideshow,
     viewedIndices,
-    fetchSlideshow,
+    loading,
     error
 });
 

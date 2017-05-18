@@ -13,6 +13,7 @@ class Home extends React.Component<HomeProps, { selectedSlideshowId: string, tim
     }
 
     handleChange = (event: any) => {
+        this.props.clearError();
         this.setState({ selectedSlideshowId: event.target.value })
         if (!!this.state.timer) {
             clearTimeout(this.state.timer);
@@ -35,7 +36,7 @@ class Home extends React.Component<HomeProps, { selectedSlideshowId: string, tim
                     <Link className="slide-button" to={LinkFactory.createSlideshowLink(this.props.slideshow.id)}>
                         {this.props.slideshow.title}</Link>
                 }
-                {this.props.error &&
+                {this.props.error.length > 0 && this.state.selectedSlideshowId &&
                     <span>No Slideshows Found.</span>
                 }
             </div>

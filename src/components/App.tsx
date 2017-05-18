@@ -16,7 +16,8 @@ const initialState: AppState = {
         slides: []
     },
     viewedIndices: [],
-    error: null
+    error: null,
+    loading: false
 };
 
 export const store = createStore(

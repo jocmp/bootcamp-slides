@@ -45,6 +45,7 @@ export interface TwoColumnContentProps {
 
 export interface HomeDispatchProps {
     searchSlideshows: (id: number) => void; 
+    clearError: () => void;
 }
 
 export interface HomeStateProps {

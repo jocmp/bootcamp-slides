@@ -28,6 +28,12 @@ export const viewSlide = (index: number) => {
     };
 }
 
+export const clearError = () => {
+    return {
+        type: 'CLEAR_ERROR'
+    }
+};
+
 export const loadSlideshow = (slideshow: SlideshowModel, currentIndex: number) => {
     return {
         type: 'LOAD_SLIDESHOW',

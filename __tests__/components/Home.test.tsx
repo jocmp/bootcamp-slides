@@ -11,17 +11,12 @@ describe('Home', () => {
     const getWrapper = (slideshow: SlideshowModel, loading: boolean = false, error: string = '',
         searcher: (event: any) => void = jest.fn()) => {
         return shallow(
-            <Home searchSlideshows={searcher} loading={loading} error={error} slideshow={slideshow} />
+            <Home clearError={jest.fn()} searchSlideshows={searcher} loading={loading} error={error} slideshow={slideshow} />
         );
     };
 
     it('renders', () => {
         expect(toJson(getWrapper(defaultSlideshow))).toMatchSnapshot();
-    });
-
-    it('shows errors when present', () => {
-        const message = 'No Slideshows Found.';
-        expect(getWrapper(defaultSlideshow, false, message).text()).toContain(message);
     });
 
     it('shows a button for the slideshow', () => {
@@ -35,5 +30,19 @@ describe('Home', () => {
         setTimeout(() =>
             expect(searcher).toHaveBeenCalled(),
             200);
+    });
+
+
+    const message = 'No Slideshows Found.';
+
+    it('shows errors when present', () => {
+        const wrapper = getWrapper(defaultSlideshow, false, message);
+        wrapper.setState({ selectedSlideshowId: '2009' })
+        expect(wrapper.text()).toContain(message);
+    });
+
+    it('hides current errors for empty text', () => {
+        const wrapper = getWrapper(defaultSlideshow, false, message);
+        expect(wrapper.text()).not.toContain(message);
     });
 });
