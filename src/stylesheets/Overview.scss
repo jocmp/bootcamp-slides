@@ -23,10 +23,19 @@
 }
 
 .overview-item {
+    display: flex;
+    margin-left: 4px;
+    margin-bottom: 4px;
+
     a {
-        padding-left: 4px;
+        margin-left: 8px;
+        align-self: center;
         text-decoration: none;
         color: $black
+    }
+
+    .check {   
+        align-self: flex-start;
     }
 }
 
