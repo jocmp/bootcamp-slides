@@ -30,15 +30,17 @@ class Home extends React.Component<HomeProps, { selectedSlideshowId: string, tim
     render() {
         return (
             <div className="home-container">
-                <label>Slideshow ID</label>
-                <input onChange={this.handleChange} value={this.state.selectedSlideshowId} type="text" />
-                {this.props.slideshow.id > 0 &&
-                    <Link className="slide-button" to={LinkFactory.createSlideshowLink(this.props.slideshow.id)}>
-                        {this.props.slideshow.title}</Link>
-                }
-                {this.props.error.length > 0 && this.state.selectedSlideshowId &&
-                    <span>No Slideshows Found.</span>
-                }
+                <div className="item">
+                    <label>Slideshow ID</label>
+                    <input onChange={this.handleChange} value={this.state.selectedSlideshowId} type="text" />
+                    {this.props.slideshow.id > 0 &&
+                        <Link className="slide-button" to={LinkFactory.createSlideshowLink(this.props.slideshow.id)}>
+                            {this.props.slideshow.title}</Link>
+                    }
+                    {this.props.error.length > 0 && this.state.selectedSlideshowId &&
+                        <span>No Slideshows Found.</span>
+                    }
+                </div>
             </div>
         )
     }
