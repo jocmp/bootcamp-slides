@@ -1,11 +1,34 @@
 @import "./colors";
 @import "./_clickable";
 
+.overview {
+    width: 20%;
+    margin-right: 4px;
+    margin-left: 2%;
+    border: 1px solid $black;
+    height: 60vh;
+    margin-top: 10px;
+    text-align: left;
+    padding-left: 16px;
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    li {
+        text-align: left;
+    }
+}
+
+.presentation-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
 .slideshow-container {
   width: 55%;
-  margin-right: 20%;
-  display: block;
-  float: left;
 }
 
 .slideshow {

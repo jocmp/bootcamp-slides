@@ -22,4 +22,8 @@ export class LinkFactory {
     static createSlideshowLink(id: number, index: number = 0) {
         return `/slideshows/${id}/slides/${index}`
     }
+
+    static getAtomicObject() {
+        return 'https://atomicobject.com';
+    }
 }

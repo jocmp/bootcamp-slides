@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { SlideshowProps } from '../Props'
-import '../stylesheets/Slideshow.scss'
+import '../stylesheets/Presentation.scss'
 import Overview from './Overview'
 import Slides from './Slides'
 
@@ -46,7 +46,7 @@ class Slideshow extends React.Component<SlideshowProps, {}> {
     render() {
         const params = this.props.match.params;
         return (
-            <div>
+            <div className="presentation-container">
                 <Overview match={this.props.match} viewSlide={this.props.viewSlide} viewedIndices={this.props.viewedIndices} slideshow={this.props.slideshow} />
                 <div className="slideshow-container">
                     <div className="slideshow">

@@ -14,6 +14,17 @@ class Home extends React.Component<HomeProps, { selectedSlideshowId: string }> {
         console.log(this.props.slideshow);
     }
 
+    isValidSlideshow = () => {
+        return this.props.slideshow.id > 0;
+    }
+
+    titleLine = () => {
+        if (this.isValidSlideshow()) {
+            return `View ${this.props.slideshow.title}`
+        }
+        return ''
+    }
+
     handleChange = (event: any) => {
         this.props.clearError();
         this.setState({ selectedSlideshowId: event.target.value })
@@ -27,12 +38,14 @@ class Home extends React.Component<HomeProps, { selectedSlideshowId: string }> {
         return (
             <div className="home-container">
                 <div className="search-header">
-                    <img src={logo} className="search-logo" alt="logo" />
-                    <input placeholder="Search slideshow IDs" onChange={this.handleChange} value={this.state.selectedSlideshowId} type="text" />
+                    <a href={LinkFactory.getAtomicObject()}>
+                        <img src={logo} className="search-logo" alt="logo" />
+                    </a>
+                    <input placeholder="Search Slideshow IDs" onChange={this.handleChange} value={this.state.selectedSlideshowId} type="text" />
                 </div>
-                <Link className={this.props.slideshow.id > 0 ? "slide-button" : "button-invisible"}
+                <Link className={this.isValidSlideshow() ? "slide-button" : "button-invisible"}
                     to={LinkFactory.createSlideshowLink(this.props.slideshow.id)}>
-                    {this.props.slideshow.title}
+                    {this.titleLine()}
                 </Link>
                 {this.props.error.length > 0 && this.state.selectedSlideshowId &&
                     <span className="slide-error">No Slideshows Found.</span>
