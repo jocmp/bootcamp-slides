@@ -35,5 +35,5 @@ describe('navigation', () => {
 
     it('returns a type of clear error', () => {
         expect(clearError().type).toEqual('CLEAR_ERROR');
-    })
+    });
 });

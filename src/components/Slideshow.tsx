@@ -39,8 +39,8 @@ class Slideshow extends React.Component<SlideshowProps, {}> {
     }
 
     componentDidMount() {
-        this.props.viewSlide(parseInt(this.props.match.params.index));
         this.props.fetchSlideshow(this.props.match.params.id, this.props.match.params.index)
+        this.props.viewSlide(parseInt(this.props.match.params.index));
     }
 
     render() {

@@ -19,9 +19,15 @@ describe('Overview', () => {
 
     const viewed: number[] = [];
 
+    const getWrapper = () => {
+        return shallow(<Overview match={{ params: {} }} viewSlide={jest.fn()} viewedIndices={viewed} slideshow={show} />);
+    }
+
     it('renders', () => {
-        const wrapper = shallow(
-            <Overview match={{ params: {} }} viewSlide={jest.fn()} viewedIndices={viewed} slideshow={show} />)
-        expect(toJson(wrapper)).toMatchSnapshot()
+        expect(toJson(getWrapper())).toMatchSnapshot()
+    });
+
+    it('displays title in header', () => {
+        expect(getWrapper().find('h4').text()).toContain(show.title);
     });
 }); 

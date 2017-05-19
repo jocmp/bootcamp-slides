@@ -5,7 +5,7 @@ exports[`Overview renders 1`] = `
   className="overview"
 >
   <h4>
-    Overview
+    Exciting Presentation
   </h4>
   <ul>
     <OverviewItem
