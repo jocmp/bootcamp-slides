@@ -1,20 +1,56 @@
 @import "./_clickable";
+@import './colors';
 
 .home-container {
-    margin-top: 1%;
     margin-left: 20px; 
     display: flex;
     height: 60vh;
     width: 100%;
     align-items: center;
-    justify-content: center; 
+    flex-direction: column;
 
-    label {
-        margin-right: 16px;
-    } 
+    input {
+        padding: 12px 20px;
+        width: 600px;
+        font-size: 10pt;
+        margin-bottom: 16px;
+    }
+
+    .slide-error {
+        margin-top: 12px;
+        color: $black;
+    }
+
+    .search-logo {
+        height: 100px;
+        margin-bottom: 16px;
+    }
+
+    .search-header {
+        display: flex;
+        flex-direction: column;
+        align-self: center; 
+        align-items: center;
+        margin-top: 10%;
+    }
     
     .slide-button {
-        @extend .clickable;
-        margin-left: 16px;
+        padding: 12px 20px;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        background-color: $teal;
+        color: white;
+        border-radius: 4px;
+
+        &:active {
+            background-color: $teal-highlighted;
+        }
+
+        &:hover {
+            background-color: $teal-highlighted;
+        }
     }
+
 }
