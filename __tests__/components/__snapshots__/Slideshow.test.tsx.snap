@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Slideshow renders 1`] = `
-<div>
+<div
+  className="presentation-container"
+>
   <Overview
     match={
       Object {
