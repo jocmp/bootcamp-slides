@@ -28,6 +28,13 @@ export const viewSlide = (index: number) => {
     };
 }
 
+export const clearViewedIndices = () => {
+    return {
+        type: 'CLEAR_VIEWED_INDICES',
+        viewedIndices: Array<string>()
+    }
+}
+
 export const clearError = () => {
     return {
         type: 'CLEAR_ERROR'
@@ -61,8 +68,10 @@ export const fetchSlideshow = (id: number, index: number = 0) => (dispatch: any,
         .then(json => dispatch(loadSlideshow(json, index)))
         .catch(error => dispatch(loadSlideshowError((error))));
 
-    return {
-        type: 'FETCH_SLIDESHOW',
-        loading: true
-    }
+    dispatch(
+        {
+            type: 'FETCH_SLIDESHOW',
+            loading: true,
+            viewedIndices: Array<string>()
+        });
 };

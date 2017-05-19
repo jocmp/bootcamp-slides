@@ -5,6 +5,8 @@ const viewedIndices = (state: number[] = [], action: any) => {
     switch (action.type) {
         case 'VIEW_SLIDE':
             return Array.from(new Set([...state, action.index]));
+        case 'FETCH_SLIDESHOW':
+            return action.viewedIndices;
         default:
             return state;
     }

@@ -8,6 +8,8 @@
 }
 
 .content-slide {
+    width: 95%;
+
     h3 {
         font-size: 20pt;
         float: left;
@@ -24,9 +26,9 @@
 .simple-slide {
     @extend .content-slide;
 
-
     p {
         float: left;
+        margin-right: 8px;
     }
 }
 

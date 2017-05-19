@@ -4,20 +4,31 @@ exports[`Home renders 1`] = `
 <div
   className="home-container"
 >
-  <label>
-    Slideshow ID
-  </label>
-  <input
-    onChange={[Function]}
-    type="text"
-    value=""
-  />
+  <div
+    className="search-header"
+  >
+    <a
+      href="https://atomicobject.com"
+    >
+      <img
+        alt="logo"
+        className="search-logo"
+        src="test-file-stub"
+      />
+    </a>
+    <input
+      onChange={[Function]}
+      placeholder="Search Slideshow IDs"
+      type="text"
+      value=""
+    />
+  </div>
   <Link
     className="slide-button"
     replace={false}
     to="/slideshows/1/slides/0"
   >
-    Slideshow
+    View Slideshow
   </Link>
 </div>
 `;

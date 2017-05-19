@@ -17,30 +17,10 @@ const hasPrevious = (props: SlideshowProps): boolean =>
     !!(hasSlides(props) && props.match.params.index > 0);
 
 class Slideshow extends React.Component<SlideshowProps, {}> {
-
-    initialState: SlideshowProps = {
-        fetchSlideshow: null,
-        handleNextSlide: null,
-        handlePreviousSlide: null,
-        viewSlide: null,
-        history: null,
-        match: null,
-        slideshow: {
-            id: 0,
-            title: "",
-            slides: []
-        },
-        viewedIndices: []
-    };
-
-    constructor(props: SlideshowProps) {
-        super(props);
-        this.state = this.initialState;
-    }
-
+    
     componentDidMount() {
-        this.props.viewSlide(parseInt(this.props.match.params.index));
         this.props.fetchSlideshow(this.props.match.params.id, this.props.match.params.index)
+        this.props.viewSlide(parseInt(this.props.match.params.index));
     }
 
     render() {

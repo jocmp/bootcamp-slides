@@ -21,7 +21,7 @@ const Overview = (props: OverviewProps) => {
     const slides = getSlides(props.slideshow);
     return (
         <div className="overview">
-            <h4>Overview</h4>
+            <h4>{props.slideshow.title}</h4>
             <ul>
                 {slides.map((slide, index) =>
                     <OverviewItem isCurrent={isCurrent(index, props)}
