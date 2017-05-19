@@ -1,0 +1,57 @@
+@import "./_clickable";
+@import './colors';
+
+.home-container {
+    margin-left: 20px; 
+    display: flex;
+    height: 60vh;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+
+    input {
+        padding: 12px 20px;
+        width: 600px;
+        font-size: 10pt;
+        margin-bottom: 16px;
+        border: 1px solid $black-light;
+    }
+
+    .slide-error {
+        margin-top: 12px;
+        color: $black;
+    }
+
+    .search-logo {
+        height: 100px;
+        margin-bottom: 16px;
+    }
+
+    .search-header {
+        display: flex;
+        flex-direction: column;
+        align-self: center; 
+        align-items: center;
+        margin-top: 10%;
+    }
+    
+    .slide-button {
+        padding: 12px 20px;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        background-color: $teal;
+        color: white;
+        border-radius: 4px;
+
+        &:active {
+            background-color: $teal-highlighted;
+        }
+
+        &:hover {
+            background-color: $teal-highlighted;
+        }
+    }
+
+}

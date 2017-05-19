@@ -1,5 +1,8 @@
 import { SlideshowModel } from '../Models'
 import { History } from 'history';
+import * as fetch from 'isomorphic-fetch'
+
+const BASE_URL: string = 'http://localhost:3000/api/v1';
 
 export const nextSlide = (id: string, index: string, totalLength: number, history: History) => {
     const currentIndex = parseInt(index);
@@ -25,59 +28,10 @@ export const viewSlide = (index: number) => {
     };
 }
 
-const apiData = (index: number): SlideshowModel => {
-    const shows: SlideshowModel[] = [
-        {
-            id: 1,
-            title: "Exceptional Presentation",
-            slides: [
-                {
-                    title: "Title here",
-                    slide_type: "title"
-                },
-                {
-                    title: "Sensational Informational",
-                    slide_type: "simple",
-                    content: ["Inspirational insatiable"]
-                }
-            ]
-        },
-        {
-            id: 2,
-            title: "Touch Fuzzy, Get Dizzy",
-            slides: [
-                {
-                    title: "Yoshi's Island",
-                    slide_type: "title",
-                },
-                {
-                    title: "Yoshi's Island",
-                    slide_type: "simple",
-                    content: ['Imperically the best Super Mario game. It even included a graphics processor inside of the cartridge.']
-                },
-                {
-                    title: "Why buy a SNES?",
-                    slide_type: "simple",
-                    content: ["Yoshi's Island. No question."]
-                },
-                {
-                    title: "Game facts",
-                    slide_type: "two-column",
-                    content: ["By going into any level with a Fat Guy and carrying a Giant Yoshi Egg to the end of a level, the player must go to the edge of the screen past the exit and throw the egg up, then use Yoshi's tongue to push it slightly into the edge of the screen. By finishing the level like this, the next Yoshi will collect the egg as it appears to take Baby Mario, allowing the player to take a Giant Yoshi Egg into any level in the game.",
-                    "Part of this game's \"character select\" theme is part of Yoshi's Island's \"Athletic\" theme. Shy Guys and Snifits also return in this game."]
-                },
-                {
-                    title: "Birds on Yoshi's Island",
-                    slide_type: "two-column",
-                    content: [
-                        "There are a few different bird species on Yoshi's Island. These include: Huffin Puffins and Goonies (pictured).",
-                        "https://i.imgur.com/SBaejMN.jpg"
-                    ]
-                }
-            ]
-        }
-    ]
-    return shows[index - 1];
+export const clearError = () => {
+    return {
+        type: 'CLEAR_ERROR'
+    }
 };
 
 export const loadSlideshow = (slideshow: SlideshowModel, currentIndex: number) => {
@@ -88,6 +42,27 @@ export const loadSlideshow = (slideshow: SlideshowModel, currentIndex: number) =
     }
 };
 
+export const loadSlideshowError = (error: any) => {
+    return {
+        type: 'LOAD_SLIDESHOW_ERROR',
+        error
+    }
+}
+
 export const fetchSlideshow = (id: number, index: number = 0) => (dispatch: any, getState: any) => {
-    dispatch(loadSlideshow(apiData(id), index));
+    fetch(`${BASE_URL}/slideshows/${id}`)
+        .then((response: any) => {
+            if (response.status === 404) {
+                return Promise.reject("No Slideshow Found");
+            } else {
+                return Promise.resolve(response.json());
+            }
+        })
+        .then(json => dispatch(loadSlideshow(json, index)))
+        .catch(error => dispatch(loadSlideshowError((error))));
+
+    return {
+        type: 'FETCH_SLIDESHOW',
+        loading: true
+    }
 };

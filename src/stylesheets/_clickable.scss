@@ -1,24 +1,8 @@
-@import "./colors";
 
 $button-background: #A5488B;
 $button-background-highlighted: #7F386B;
 
-.slideshow-container {
-  width: 55%;
-  // background: pink;
-  margin-right: 20%;
-  display: block;
-  float: left;
-}
-
-.slideshow {
-  height: 60vh;
-  vertical-align: center;
-  margin-top: 10px;
-  border: 1px solid $black;
- }
-
-.directional-button {
+.clickable {
   // https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_animate3
   display: inline-block;
   padding: 12px 20px;
@@ -42,27 +26,5 @@ $button-background-highlighted: #7F386B;
 
   &:hover {
     background-color: $button-background-highlighted;
-  }
-}
-
-.next-button {
-  @extend .directional-button;
-  background-color: $teal;
-  float: right;
-
-  &:hover {
-    background-color: $teal-highlighted; 
-  }
-}
-
-.previous-button {
-  @extend .directional-button;
-  float: left;
-  background-color: white;
-  border: 1px solid #CCC;
-  color: #333;
-
-  &:hover {
-    background-color: #E6E6E6;
   }
 }

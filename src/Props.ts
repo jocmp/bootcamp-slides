@@ -42,3 +42,16 @@ export interface SlideProps {
 export interface TwoColumnContentProps {
     content: string;
 }
+
+export interface HomeDispatchProps {
+    searchSlideshows: (id: number) => void; 
+    clearError: () => void;
+}
+
+export interface HomeStateProps {
+    slideshow: SlideshowModel;
+    loading: boolean;
+    error: string;
+}
+
+export interface HomeProps extends HomeStateProps, HomeDispatchProps {};

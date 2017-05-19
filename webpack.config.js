@@ -45,6 +45,11 @@ module.exports = {
                         mimetype: "image/svg+xml"
                     }
                 }]
+            },
+            {
+                test: /\.png$/,
+                loader: "url-loader",
+                query: { mimetype: "image/png" }
             }
         ]
     },

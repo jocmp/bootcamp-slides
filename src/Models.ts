@@ -13,4 +13,17 @@ export interface SlideModel {
 export interface AppState {
     slideshow: SlideshowModel;
     viewedIndices: number[];
+    loading: boolean;
+    error: string;
+}
+
+export class LinkFactory {
+
+    static createSlideshowLink(id: number, index: number = 0) {
+        return `/slideshows/${id}/slides/${index}`
+    }
+
+    static getAtomicObject() {
+        return 'https://atomicobject.com';
+    }
 }

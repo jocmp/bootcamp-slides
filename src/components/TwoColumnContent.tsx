@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { TwoColumnContentProps } from '../Props'
 
-const URL_MATCHER = new RegExp('(https?|ftp):\/\/[^\s/$.?#].[^\s]*');
+// https://mathiasbynens.be/demo/url-regex @stephenhay regex
+const URL_MATCHER = new RegExp('https?:\/\/[^\s/$.?#].[^\s]*.(jpe?g|gif|png)');
 
 const isLink = (content: string): boolean => {
     return URL_MATCHER.test(content);

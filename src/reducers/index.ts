@@ -10,22 +10,49 @@ const viewedIndices = (state: number[] = [], action: any) => {
     }
 };
 
+const initialSlideshow: any = { title: "", id: -1, slides: [] };
+
 const slideshow = (state: AppState, action: any) => {
     switch (action.type) {
         case 'LOAD_SLIDESHOW':
             return action.slideshow;
+        case 'LOAD_SLIDESHOW_ERROR':
+            return initialSlideshow;
         case 'VIEW_SLIDE':
         default:
             if (!!state) {
                 return state;
             }
-            return { title: "", id: 0, slides: [] };
+            return initialSlideshow;
     }
 }
 
+const loading = (state: AppState, action: any) => {
+    switch (action.type) {
+        case 'FETCH_SLIDESHOW':
+            return action.loading;
+        default:
+            return loading;
+    }
+}
+
+const error = (state: AppState, action: any) => {
+    switch (action.type) {
+        case 'LOAD_SLIDESHOW_ERROR':
+            return action.error;
+        case 'CLEAR_ERROR':
+            return '';
+        default:
+            return '';
+    }
+}
+
+
 const rootReducer = combineReducers({
     slideshow,
-    viewedIndices
+    viewedIndices,
+    loading,
+    error
 });
 
 export default rootReducer;
