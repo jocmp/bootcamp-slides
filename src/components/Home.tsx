@@ -28,7 +28,7 @@ class Home extends React.Component<HomeProps, { selectedSlideshowId: string }> {
     handleChange = (event: any) => {
         this.props.clearError();
         this.setState({ selectedSlideshowId: event.target.value })
-        if (!isNaN(Number(event.target.value))) {
+        if (event.target.value.length > 0 && !isNaN(Number(event.target.value))) {
             const searchValue = event.target.value;
             this.props.searchSlideshows(Number(searchValue))
         }
